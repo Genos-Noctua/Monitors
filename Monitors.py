@@ -6,12 +6,12 @@ from pystray import Icon, Menu as menu, MenuItem as item
 def switch(mode):
     os.system(f'.\MultiMonitorTool.exe /SetPrimary \\\\.\\DISPLAY1')
     if mode == "1":
-        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY3')
         os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY2')
+        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY3')
         os.system('.\MultiMonitorTool.exe /LoadConfig "1configs"')
     elif mode == "2":
-        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY3')
-        os.system('.\MultiMonitorTool.exe /enable \\\\.\\DISPLAY2')
+        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY2')
+        os.system('.\MultiMonitorTool.exe /enable \\\\.\\DISPLAY3')
         os.system('.\MultiMonitorTool.exe /LoadConfig "2configs"')
     elif mode == "3":
         for x in range(3):
