@@ -1,17 +1,16 @@
-#Monitors 2.1
+#Monitors 2.5
 import os, time
 from PIL import Image
 from pystray import Icon, Menu as menu, MenuItem as item
 
 def switch(mode):
-    os.system(f'.\MultiMonitorTool.exe /SetPrimary \\\\.\\DISPLAY1')
+    os.system(f'.\MultiMonitorTool.exe /SetPrimary 3CM72807W7')
     if mode == "1":
-        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY2')
-        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY3')
+        os.system('.\MultiMonitorTool.exe /disable HS2P706501 QPC073601733')
         os.system('.\MultiMonitorTool.exe /LoadConfig "1configs"')
     elif mode == "2":
-        os.system('.\MultiMonitorTool.exe /disable \\\\.\\DISPLAY2')
-        os.system('.\MultiMonitorTool.exe /enable \\\\.\\DISPLAY3')
+        os.system('.\MultiMonitorTool.exe /disable HS2P706501')
+        os.system('.\MultiMonitorTool.exe /enable QPC073601733')
         os.system('.\MultiMonitorTool.exe /LoadConfig "2configs"')
     elif mode == "3":
         for x in range(3):
@@ -19,9 +18,8 @@ def switch(mode):
             time.sleep(0.1)
     elif mode == "TV":
         os.system('.\MultiMonitorTool.exe /LoadConfig "TVconfigs"')
-    f = open("state", "w+")
-    print(mode, file=f, end="", flush=True)
-    f.close()
+    with open("state", "w+") as f:
+        print(mode, file=f, end="")
 
 def main():
     if not os.path.isfile("state"):
