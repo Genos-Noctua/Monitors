@@ -4,7 +4,7 @@ from PIL import Image
 from pystray import Icon, Menu as menu, MenuItem as item
 
 def switch(mode):
-    os.system(f'.\MultiMonitorTool.exe /SetPrimary 3CM72807W7')
+    os.system('.\MultiMonitorTool.exe /SetPrimary 3CM72807W7')
     if mode == "1":
         os.system('.\MultiMonitorTool.exe /disable HS2P706501 QPC073601733')
         os.system('.\MultiMonitorTool.exe /LoadConfig "1configs"')
