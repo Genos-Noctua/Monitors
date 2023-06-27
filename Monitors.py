@@ -9,8 +9,8 @@ def switch(mode):
         os.system('.\MultiMonitorTool.exe /disable HS2P706501 QPC073601733')
         os.system('.\MultiMonitorTool.exe /LoadConfig "1configs"')
     elif mode == "2":
-        os.system('.\MultiMonitorTool.exe /disable HS2P706501')
-        os.system('.\MultiMonitorTool.exe /enable QPC073601733')
+        os.system('.\MultiMonitorTool.exe /disable QPC073601733')
+        os.system('.\MultiMonitorTool.exe /enable HS2P706501')
         os.system('.\MultiMonitorTool.exe /LoadConfig "2configs"')
     elif mode == "3":
         for x in range(3):
